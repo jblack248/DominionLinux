@@ -9,6 +9,8 @@ class Card
 {
 public:
     Card();
+    Card(QString theName, QString theSet, QString theCost, QString theType,
+         QString theRules);
 
     QString name, cost, set, type, rules;
     QString name_variable;

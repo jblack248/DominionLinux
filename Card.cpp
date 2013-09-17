@@ -4,6 +4,17 @@ Card::Card() {
 
 }
 
+Card::Card(QString theName, QString theSet, QString theCost, QString theType,
+           QString theRules) {
+    name = theName;
+    set = theSet;
+    cost = theCost;
+    type = theType;
+    rules = theRules;
+
+    FixName();
+}
+
 void Card::Set(const QString &theName, const QString &theSet,
                const QString &theCost, const QString &theType,
                const QString &theRules)
@@ -16,7 +27,8 @@ void Card::Set(const QString &theName, const QString &theSet,
 }
 
 void Card::FixName() {
-    name_variable = name.remove(" ");
-    name_variable = name.remove("\'");
-    name_variable = name.remove("-");
+    name_variable = name;
+    name_variable.remove(" ");
+    name_variable.remove("\'");
+    name_variable.remove("-");
 }
